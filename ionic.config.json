@@ -1,0 +1,7 @@
+{
+  "name": "BookMgm",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
