@@ -1,0 +1,58 @@
+<ion-header class="header">
+  <ion-toolbar class="toolbar">
+    <ion-title class="title">Minha Biblioteca</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="content">
+  <ion-list class="book-list">
+    <ion-item *ngFor="let book of books" lines="full" class="book-item">
+      
+      <!-- Div da imagem e informações do livro -->
+      <div class="book-info">
+        <ion-thumbnail slot="start" class="book-thumbnail">
+          <img [src]="book.cover_link" alt="Capa do livro" class="book-image">
+        </ion-thumbnail>
+
+        <ion-label>
+          <h2 class="book-title">{{ book.title }}</h2>
+          <p class="book-author">{{ book.author }}</p>
+        </ion-label>
+      </div>
+
+      <!-- Div dos botões -->
+      <div class="button-group">
+        <ion-button
+          fill="clear"
+          slot="end"
+          color="primary"
+          (click)="navigateToDetails(book.isbn)"
+          class="button-primary">
+          <ion-icon name="information-circle-outline" class="button-icon"></ion-icon>
+        </ion-button>
+        <ion-button
+          fill="clear"
+          slot="end"
+          color="secondary"
+          (click)="navigateToNotes(book.id)"
+          class="button-secondary">
+          <ion-icon name="chatbubble-ellipses-outline" class="button-icon"></ion-icon>
+        </ion-button>
+        <ion-button
+          fill="clear"
+          slot="end"
+          color="danger"
+          (click)="removeBook(book.id)"
+          class="button-danger">
+          <ion-icon name="trash-outline" class="button-icon"></ion-icon>
+        </ion-button>
+      </div>
+    </ion-item>
+  </ion-list>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" class="fab">
+    <ion-fab-button routerLink="/add-book" class="fab-button">
+      <ion-icon name="add" class="fab-icon"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

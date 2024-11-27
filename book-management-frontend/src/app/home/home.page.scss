@@ -1,0 +1,123 @@
+.header {
+    padding: 10px;
+}
+
+.toolbar {
+    border: 2px solid #3880ff;
+    border-radius: 10px;
+}
+
+.title {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.content {
+    font-family: Arial, sans-serif;
+    color: #333;
+    padding: 10px;
+}
+
+.book-list {
+    padding: 10px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Cria um grid responsivo */
+    gap: 10px;
+}
+
+.book-item {
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    border: 1px solid #ddd;
+    display: grid;
+    grid-template-rows: auto 1fr; /* Para dividir a imagem e a informação do livro */
+    gap: 10px;
+}
+
+.book-info {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.book-thumbnail {
+    width: 100%;
+    height: 180px; /* Definindo uma altura fixa */
+    margin-bottom: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden; /* Garante que a parte cortada da imagem não apareça */
+    border-radius: 5px; /* Caso queira bordas arredondadas */
+}
+
+.book-image {
+    width: 100%;
+    height: 100%; /* Garante que a imagem preencha toda a altura do container */
+    object-fit: cover; /* Ajusta a imagem para cobrir o espaço mantendo a proporção */
+}
+
+.book-title {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #3880ff;
+    margin-bottom: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-wrap: wrap;
+}
+
+.book-author {
+    font-size: 0.8rem;
+    color: #888;
+    margin: 0;
+    text-wrap: wrap;
+}
+
+.button-group {
+    display: grid;
+    gap: 5px;
+    align-items: center;
+    width: 100%;
+    margin-top: auto;
+}
+
+.button-primary,
+.button-secondary,
+.button-danger {
+    font-size: 1.2rem;
+    padding: 5px 10px;
+    height: 40px;
+    width: 100%;
+}
+
+.button-primary {
+    color: #3880ff;
+}
+
+.button-secondary {
+    color: #3dc2ff;
+}
+
+.button-danger {
+    color: #eb445a;
+}
+
+.button-icon {
+    font-size: 20px;
+}
+
+.fab {
+    z-index: 10;
+}
+
+.fab-button {
+    color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.fab-icon {
+    font-size: 30px;
+}

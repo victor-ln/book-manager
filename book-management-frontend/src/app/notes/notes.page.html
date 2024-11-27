@@ -1,0 +1,42 @@
+<ion-header>
+  <app-header [title]="'Minha Biblioteca'"></app-header>
+  <ion-toolbar>
+    <ion-title>{{ book?.title || 'Notas' }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <p><strong>Autor:</strong> {{ book?.author || 'Desconhecido' }}</p>
+
+  <ion-list>
+    <ion-list-header>
+      <ion-label>Notas</ion-label>
+    </ion-list-header>
+    <ion-item *ngFor="let note of notes">
+      <ion-label>
+        <p>{{ note.note }}</p>
+        <small>{{ note.date | date: 'short' }}</small>
+        <p><strong>Página:</strong> {{ note.page }}</p>
+      </ion-label>
+      <ion-button 
+        fill="clear" 
+        color="danger" 
+        slot="end" 
+        (click)="removeNote(note.id)">
+        Excluir
+      </ion-button>
+    </ion-item>
+  </ion-list>
+
+  <ion-item>
+    <ion-label position="floating">Nova Nota</ion-label>
+    <ion-input [(ngModel)]="newNote"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Página</ion-label>
+    <ion-input type="number" [(ngModel)]="newNotePage"></ion-input>
+  </ion-item>
+
+  <ion-button expand="full" (click)="addNote()">Adicionar Nota</ion-button>
+</ion-content>
